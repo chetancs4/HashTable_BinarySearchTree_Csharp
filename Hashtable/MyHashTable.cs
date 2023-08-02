@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HashTableAndBinarySearchTree.Hashtable
 {
-    class MyHashTable<TKey, TValue>
+    public class MyHashTable<TKey, TValue>
     {
         private int size;
         private MyLinkedList<TKey, TValue>[] table;
@@ -21,10 +21,8 @@ namespace HashTableAndBinarySearchTree.Hashtable
 
         private int HashFunction(TKey key)
         {
-            int hash = 0;
-            foreach (char c in key.ToString())
-                hash += (int)c;
-            return hash % size;
+            // Custom hash function using GetHashCode() to get the index
+            return Math.Abs(key.GetHashCode()) % size;
         }
 
         public void Insert(TKey key)
@@ -51,5 +49,4 @@ namespace HashTableAndBinarySearchTree.Hashtable
                 return value;
         }
     }
-
 }

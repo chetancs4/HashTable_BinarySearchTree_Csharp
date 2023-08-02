@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HashTableAndBinarySearchTree.Hashtable
 {
 
-    class MyLinkedList<TKey, TValue>
+    public class MyLinkedList<TKey, TValue>
     {
         private MyMapNode<TKey, TValue> head;
 
@@ -30,4 +30,5 @@ namespace HashTableAndBinarySearchTree.Hashtable
             return default(TValue);
         }
     }
+
 }

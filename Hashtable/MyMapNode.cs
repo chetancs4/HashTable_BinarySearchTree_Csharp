@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HashTableAndBinarySearchTree.Hashtable
 {
-    class MyMapNode<TKey, TValue>
+    public class MyMapNode<TKey, TValue>
     {
         public TKey Key { get; }
         public TValue Value { get; set; }
