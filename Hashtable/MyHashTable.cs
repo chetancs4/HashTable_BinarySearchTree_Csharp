@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace HashTableAndBinarySearchTree.Hashtable
 {
+
     public class MyHashTable<TKey, TValue>
     {
         private int size;
@@ -47,6 +48,13 @@ namespace HashTableAndBinarySearchTree.Hashtable
                 return default(TValue);
             else
                 return value;
+        }
+
+        public bool Remove(TKey key)
+        {
+            int index = HashFunction(key);
+            MyLinkedList<TKey, TValue> linkedList = table[index];
+            return linkedList.Remove(key);
         }
     }
 }

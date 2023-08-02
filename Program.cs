@@ -19,12 +19,19 @@ namespace HashTableAndBinarySearchTree
                 hashTable.Insert(lowerWord);
             }
 
-            // Find and display the frequency of each word
+            // Remove the word "avoidable"
+            string wordToRemove = "avoidable";
+            hashTable.Remove(wordToRemove.ToLower());
+
+            // Find and display the frequency of each word (excluding the removed word)
             foreach (string word in words)
             {
                 string lowerWord = word.ToLower();
-                int frequency = hashTable.FindFrequency(lowerWord);
-                Console.WriteLine($"The frequency of '{word}' is: {frequency}");
+                if (lowerWord != wordToRemove.ToLower())
+                {
+                    int frequency = hashTable.FindFrequency(lowerWord);
+                    Console.WriteLine($"The frequency of '{word}' is: {frequency}");
+                }
             }
         }
     }

@@ -29,6 +29,34 @@ namespace HashTableAndBinarySearchTree.Hashtable
             }
             return default(TValue);
         }
+
+        public bool Remove(TKey key)
+        {
+            MyMapNode<TKey, TValue> current = head;
+            MyMapNode<TKey, TValue> prev = null;
+
+            while (current != null)
+            {
+                if (current.Key.Equals(key))
+                {
+                    if (prev == null)
+                    {
+                        // Removing the head node
+                        head = current.Next;
+                    }
+                    else
+                    {
+                        prev.Next = current.Next;
+                    }
+                    return true;
+                }
+
+                prev = current;
+                current = current.Next;
+            }
+
+            return false;
+        }
     }
 
 }
