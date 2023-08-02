@@ -6,9 +6,8 @@ namespace HashTableAndBinarySearchTree
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            string paragraph = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
-            string[] words = paragraph.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            string sentence = "To be or not to be";
+            string[] words = sentence.Split();
 
             // Create a hash table to store the word frequencies
             MyHashTable<string, int> hashTable = new MyHashTable<string, int>(words.Length);
@@ -28,5 +27,6 @@ namespace HashTableAndBinarySearchTree
                 Console.WriteLine($"The frequency of '{word}' is: {frequency}");
             }
         }
+    }
     }
 }

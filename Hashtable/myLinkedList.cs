@@ -6,20 +6,8 @@ using System.Threading.Tasks;
 
 namespace HashTableAndBinarySearchTree.Hashtable
 {
-    class MyMapNode<TKey, TValue>
-    {
-        public TKey Key { get; }
-        public TValue Value { get; set; }
-        public MyMapNode<TKey, TValue> Next { get; set; }
 
-        public MyMapNode(TKey key, TValue value)
-        {
-            Key = key;
-            Value = value;
-            Next = null;
-        }
-    }
-        class MyLinkedList<TKey, TValue>
+    class MyLinkedList<TKey, TValue>
     {
         private MyMapNode<TKey, TValue> head;
 
